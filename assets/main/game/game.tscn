@@ -1,3 +1,20 @@
 [gd_scene format=3 uid="uid://bsba3jvrrl06d"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="UI" type="SplitContainer" parent="Canvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 460
+vertical = true
+
+[node name="Game" type="PanelContainer" parent="Canvas/UI"]
+layout_mode = 2
+
+[node name="Status" type="PanelContainer" parent="Canvas/UI"]
+layout_mode = 2
