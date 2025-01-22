@@ -13,8 +13,8 @@ grow_vertical = 2
 split_offset = 460
 vertical = true
 
-[node name="Game" type="PanelContainer" parent="Canvas/UI"]
+[node name="Game" type="MarginContainer" parent="Canvas/UI"]
 layout_mode = 2
 
-[node name="Status" type="PanelContainer" parent="Canvas/UI"]
+[node name="Status" type="MarginContainer" parent="Canvas/UI"]
 layout_mode = 2
