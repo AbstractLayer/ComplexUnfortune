@@ -33,6 +33,10 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/project-time-tracker/plugin.cfg")
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [physics]
 
 common/physics_jitter_fix=0.0
