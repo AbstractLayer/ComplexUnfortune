@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0ilqs5mhjq06"]
+
+[ext_resource type="Script" uid="uid://bq4duqsmfm1lr" path="res://src/DEBUG/game_debug.gd" id="1_v06p8"]
+[ext_resource type="Texture2D" uid="uid://c0o8lpyl4wp05" path="res://icon.svg" id="2_4glc8"]
+[ext_resource type="Script" uid="uid://cxoqsrhpssed" path="res://assets/main/DEBUG/input_sychronizer.gd" id="2_d2owh"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4glc8"]
+properties/0/path = NodePath(".:player_id")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:is_hello")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Label:visible")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ydwur"]
+properties/0/path = NodePath("InputSychronizer:input_direction")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2owh"]
+size = Vector2(129, 129)
+
+[node name="GameDEBUG" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_v06p8")
+
+[node name="PlayerSychronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_4glc8")
+
+[node name="InputSychronizer" type="MultiplayerSynchronizer" parent="."]
+unique_name_in_owner = true
+replication_config = SubResource("SceneReplicationConfig_ydwur")
+script = ExtResource("2_d2owh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4glc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_d2owh")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -18.0
+offset_top = -11.0
+offset_right = 22.0
+offset_bottom = 12.0
+text = "Hello"
