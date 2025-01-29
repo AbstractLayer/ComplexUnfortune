@@ -405,6 +405,7 @@ players_position_container = NodePath("LobbyMargin/Panel/Position")
 start_button = NodePath("LobbyMargin/Panel/StartButton")
 
 [node name="LobbyMultiSpawner" type="MultiplayerSpawner" parent="Menus/MarginMenu/Separator/LobbyPanel"]
+_spawnable_scenes = PackedStringArray("uid://yb0u3rclvn4g")
 spawn_path = NodePath("../LobbyMargin/Panel/Players")
 spawn_limit = 4
 
