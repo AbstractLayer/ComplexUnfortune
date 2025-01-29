@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bdddjbx0ct37n"]
+[gd_scene load_steps=2 format=3 uid="uid://bdddjbx0ct37n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4w4f"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="LoadingScreen" type="Control"]
 layout_mode = 3
@@ -7,6 +10,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4w4f")
 
 [node name="Label" type="RichTextLabel" parent="."]
 layout_mode = 1

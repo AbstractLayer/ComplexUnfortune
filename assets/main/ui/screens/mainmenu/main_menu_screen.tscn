@@ -318,6 +318,7 @@ grow_vertical = 2
 text = "Exit"
 
 [node name="MultiplayerPanel" type="Panel" parent="Menus/MarginMenu/Separator" node_paths=PackedStringArray("host_button", "join_button", "textedit_host_name", "textedit_join_name")]
+visible = false
 custom_minimum_size = Vector2(1050, 0)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("6_kbghk")
@@ -406,7 +407,6 @@ size_flags_vertical = 4
 text = "Join"
 
 [node name="LobbyPanel" type="Panel" parent="Menus/MarginMenu/Separator" node_paths=PackedStringArray("players_container", "players_position_container", "start_button")]
-visible = false
 custom_minimum_size = Vector2(1050, 0)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("6_kbghk")

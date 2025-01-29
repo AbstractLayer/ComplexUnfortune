@@ -1,12 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsjtyai2e4ftr"]
+[gd_scene load_steps=2 format=3 uid="uid://bsjtyai2e4ftr"]
 
 [ext_resource type="Script" uid="uid://cf2m243av10qf" path="res://src/main/game/game.gd" id="1_irurx"]
-[ext_resource type="PackedScene" uid="uid://dm1xc6eilg6yf" path="res://assets/main/game/action/dungeon_crawler_screen.tscn" id="2_6i0xe"]
-[ext_resource type="PackedScene" uid="uid://02kxwwcb0wsc" path="res://assets/main/game/action/battle_screen.tscn" id="3_0s14g"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_irurx")
-
-[node name="DungeonCrawlerScreen" parent="." instance=ExtResource("2_6i0xe")]
-
-[node name="BattleScreen" parent="." instance=ExtResource("3_0s14g")]

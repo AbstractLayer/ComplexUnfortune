@@ -2,7 +2,7 @@ extends Node
 
 var init_tree: SceneTree
 
-var loading_screen = load("res://assets/main/ui/screens/loading_screen.tscn")
+var loading_screen = load("res://assets/main/ui/screens/loading/loading_screen.tscn")
 var loading_screen_instance
 var load_scene_progress: Array
 var global_scene_path : String
@@ -23,7 +23,7 @@ func load_new_scene(scene_path : String, owner_node : Node):
 	self.set_process(true)
 	print("set_process_true")
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	ResourceLoader.load_threaded_get_status(global_scene_path,load_scene_progress)
 	if ResourceLoader.THREAD_LOAD_LOADED:
 		loading_screen_instance.queue_free()
