@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://yb0u3rclvn4g"]
+
+[ext_resource type="Texture2D" uid="uid://c0o8lpyl4wp05" path="res://icon.svg" id="1_8ew5t"]
+[ext_resource type="Script" uid="uid://n10fd8omr58s" path="res://src/main/ui/screens/mainmenu/lobby/player_lobby.gd" id="2_7kplm"]
+
+[node name="PlayerLobby" type="TextureRect" node_paths=PackedStringArray("name_label")]
+texture = ExtResource("1_8ew5t")
+script = ExtResource("2_7kplm")
+name_label = NodePath("PlayerNameLabel")
+
+[node name="PlayerNameLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 3.05176e-05
+offset_right = 20.0
+offset_bottom = 22.3334
+grow_horizontal = 2
+grow_vertical = 0
+text = "Lost"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -3,8 +3,7 @@ extends Node
 const SERVER_IP = "127.0.0.1"
 const PORT = 25565
 
-const player_scene = preload("res://assets/main/ui/screens/mainmenu/lobby/player_lobby.tscn")
-
+var player_scene = preload("res://assets/main/ui/screens/mainmenu/lobby/player_lobby.tscn")
 var _players_lobby_node
 
 func host_game(name: String):
@@ -22,7 +21,7 @@ func host_game(name: String):
 	
 	_add_player_in_game(name, 1)
 	
-func join_game():
+func join_game(name: String):
 	print("joined")
 	
 	var client_peer = ENetMultiplayerPeer.new()
@@ -41,6 +40,6 @@ func _add_player_in_game(name: String, id: int):
 	
 func _remove_player_in_game(id: int):
 	print("Player %s has disconnected" % id)
-	#if not _players_spawn_node.has_node(str(id)):
-		#return
-	#_players_spawn_node.get_node(str(id)).queue_free()
+	if not _players_lobby_node.has_node(str(id)):
+		return
+	_players_lobby_node.get_node(str(id)).queue_free()
