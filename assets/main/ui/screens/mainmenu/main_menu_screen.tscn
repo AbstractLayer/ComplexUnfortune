@@ -317,14 +317,15 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Exit"
 
-[node name="MultiplayerPanel" type="Panel" parent="Menus/MarginMenu/Separator" node_paths=PackedStringArray("host_button", "join_button", "textedit_name")]
+[node name="MultiplayerPanel" type="Panel" parent="Menus/MarginMenu/Separator" node_paths=PackedStringArray("host_button", "join_button", "textedit_host_name", "textedit_join_name")]
 custom_minimum_size = Vector2(1050, 0)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("6_kbghk")
 script = ExtResource("9_t3vmj")
 host_button = NodePath("Hbox/HostMargin/Container/VBoxContainer/HostButton")
-join_button = NodePath("Hbox/JoinMargin/Container/JoinButton")
-textedit_name = NodePath("Hbox/HostMargin/Container/VBoxContainer/NameTextEdit")
+join_button = NodePath("Hbox/JoinMargin/Container/VBoxContainer/JoinButton")
+textedit_host_name = NodePath("Hbox/HostMargin/Container/VBoxContainer/NameTextEdit")
+textedit_join_name = NodePath("Hbox/JoinMargin/Container/VBoxContainer/NameTextEdit")
 
 [node name="Hbox" type="HBoxContainer" parent="Menus/MarginMenu/Separator/MultiplayerPanel"]
 layout_mode = 1
@@ -388,7 +389,17 @@ Join"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="JoinButton" type="Button" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/JoinMargin/Container"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/JoinMargin/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NameTextEdit" type="TextEdit" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/JoinMargin/Container/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+placeholder_text = "Name"
+
+[node name="JoinButton" type="Button" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/JoinMargin/Container/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

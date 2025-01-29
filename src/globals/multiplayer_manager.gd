@@ -7,9 +7,8 @@ var player_scene = preload("res://assets/main/ui/screens/mainmenu/lobby/player_l
 
 var _players_lobby_node
 
-func host_game(name: String):
+func host_game():
 	print("hosted")
-	
 	var server_peer = ENetMultiplayerPeer.new()
 	server_peer.create_server(PORT)
 	
