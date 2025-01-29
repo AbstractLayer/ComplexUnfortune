@@ -22,15 +22,15 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MultiplayerManager="*res://src/multiplayer/multiplayer_manager.gd"
+MultiplayerManager="*res://src/globals/multiplayer_manager.gd"
+SceneManager="*res://src/globals/scene_manager.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/sharp_corners=true
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [editor_plugins]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c0ilqs5mhjq06"]
 
-[ext_resource type="Script" uid="uid://bq4duqsmfm1lr" path="res://src/DEBUG/game_debug.gd" id="1_v06p8"]
+[ext_resource type="Script" uid="uid://bq4duqsmfm1lr" path="res://src/main/DEBUG/game_debug.gd" id="1_v06p8"]
 [ext_resource type="Texture2D" uid="uid://c0o8lpyl4wp05" path="res://icon.svg" id="2_4glc8"]
-[ext_resource type="Script" uid="uid://cxoqsrhpssed" path="res://assets/main/DEBUG/input_sychronizer.gd" id="2_d2owh"]
+[ext_resource type="Script" uid="uid://cxoqsrhpssed" path="res://src/main/DEBUG/input_sychronizer.gd" id="2_d2owh"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4glc8"]
 properties/0/path = NodePath(".:player_id")
