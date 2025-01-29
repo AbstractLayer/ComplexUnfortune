@@ -404,8 +404,9 @@ players_container = NodePath("LobbyMargin/Panel/Players")
 players_position_container = NodePath("LobbyMargin/Panel/Position")
 start_button = NodePath("LobbyMargin/Panel/StartButton")
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Menus/MarginMenu/Separator/LobbyPanel"]
+[node name="LobbyMultiSpawner" type="MultiplayerSpawner" parent="Menus/MarginMenu/Separator/LobbyPanel"]
 spawn_path = NodePath("../LobbyMargin/Panel/Players")
+spawn_limit = 4
 
 [node name="LobbyMargin" type="MarginContainer" parent="Menus/MarginMenu/Separator/LobbyPanel"]
 layout_mode = 1

@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://yb0u3rclvn4g"]
+[gd_scene load_steps=4 format=3 uid="uid://yb0u3rclvn4g"]
 
 [ext_resource type="Texture2D" uid="uid://c0o8lpyl4wp05" path="res://icon.svg" id="1_8ew5t"]
 [ext_resource type="Script" uid="uid://n10fd8omr58s" path="res://src/main/ui/screens/mainmenu/lobby/player_lobby.gd" id="2_7kplm"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7kplm"]
+properties/0/path = NodePath(".:player_id")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="PlayerLobby" type="TextureRect" node_paths=PackedStringArray("name_label")]
 texture = ExtResource("1_8ew5t")
 script = ExtResource("2_7kplm")
 name_label = NodePath("PlayerNameLabel")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_7kplm")
 
 [node name="PlayerNameLabel" type="Label" parent="."]
 layout_mode = 1

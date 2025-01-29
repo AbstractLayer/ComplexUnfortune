@@ -4,10 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dm1xc6eilg6yf" path="res://assets/main/game/action/dungeon_crawler_screen.tscn" id="2_6i0xe"]
 [ext_resource type="PackedScene" uid="uid://02kxwwcb0wsc" path="res://assets/main/game/action/battle_screen.tscn" id="3_0s14g"]
 
-[node name="Game" type="Node" node_paths=PackedStringArray("dungeon_crawler_screen", "battle_screen")]
+[node name="Game" type="Node"]
 script = ExtResource("1_irurx")
-dungeon_crawler_screen = NodePath("")
-battle_screen = NodePath("")
 
 [node name="DungeonCrawlerScreen" parent="." instance=ExtResource("2_6i0xe")]
 

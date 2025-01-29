@@ -22,8 +22,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MultiplayerManager="*res://assets/main/multiplayer_manager.gd"
 SceneManager="*res://src/globals/scene_manager.gd"
+MultiplayerManager="*res://src/globals/multiplayer_manager.gd"
 
 [display]
 
