@@ -1,0 +1,938 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjytb6luhu8vv"]
+
+[ext_resource type="Texture2D" uid="uid://c0o8lpyl4wp05" path="res://icon.svg" id="1_aghgt"]
+[ext_resource type="StyleBox" uid="uid://dvlpjp37r5k6y" path="res://assets/main/ui/style/menu/menu_panel.tres" id="2_lht1y"]
+
+[sub_resource type="Gradient" id="Gradient_605q1"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sutry"]
+gradient = SubResource("Gradient_605q1")
+
+[node name="AcervoScreen" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackGround" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0.360784, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_aghgt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -404.0
+offset_bottom = -204.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Ground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -204.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_sutry")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_top = 591.0
+offset_right = 1280.0
+offset_bottom = 719.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="MarginContainer/TextureRect"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 56.0
+offset_right = 240.0
+offset_bottom = 79.0
+text = "32"
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_aghgt")
+
+[node name="Menus" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Menus"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ContractMenu" type="Panel" parent="Menus/MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_lht1y")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menus/MarginContainer/ContractMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Panel" type="Panel" parent="Menus/MarginContainer/ContractMenu/MarginContainer"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 54
+text = "Contract"
+horizontal_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Menus/MarginContainer/ContractMenu/MarginContainer"]
+custom_minimum_size = Vector2(0, 440)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -385.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 180
+alignment = 1
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Offensive"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Defensive"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Suporter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Stunner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Setter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.125
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Test" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="Test2" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="Test3" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Test" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="Test2" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="Test3" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="HBoxContainer3" type="VBoxContainer" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Test" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="Test2" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="Test3" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="HBoxContainer4" type="VBoxContainer" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Test" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="Test2" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="Test3" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="HBoxContainer5" type="VBoxContainer" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Test" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="Test2" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="Test3" type="TextureRect" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Button" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 51.0
+offset_right = 210.0
+offset_bottom = 82.0
+text = "Contract"
+
+[node name="Button2" type="Button" parent="Menus/MarginContainer/ContractMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 89.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Deband"
+
+[node name="YourSpaceMenu" type="Panel" parent="Menus/MarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_lht1y")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menus/MarginContainer/YourSpaceMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Panel" type="Panel" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 54
+text = "Your Space"
+horizontal_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer"]
+custom_minimum_size = Vector2(0, 440)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.125
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="Test" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Test2" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Test3" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="Test" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Test2" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Test3" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer2/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="HBoxContainer3" type="VBoxContainer" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Test" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Test2" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Test3" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer3/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="HBoxContainer4" type="VBoxContainer" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 1
+
+[node name="Test" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Test2" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Test3" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer4/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="HBoxContainer5" type="VBoxContainer" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 1
+
+[node name="Test" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Test2" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test2"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"
+
+[node name="Test3" type="TextureRect" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("1_aghgt")
+
+[node name="Label" type="Label" parent="Menus/MarginContainer/YourSpaceMenu/MarginContainer/Panel2/VBoxContainer2/HBoxContainer5/Test3"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 13.0
+offset_right = 175.0
+offset_bottom = 36.0
+text = "Lars"

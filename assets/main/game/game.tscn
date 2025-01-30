@@ -1,20 +1,6 @@
-[gd_scene format=3 uid="uid://bsba3jvrrl06d"]
+[gd_scene load_steps=2 format=3 uid="uid://bsjtyai2e4ftr"]
 
-[node name="Game" type="Node2D"]
+[ext_resource type="Script" uid="uid://cf2m243av10qf" path="res://src/main/game/game.gd" id="1_irurx"]
 
-[node name="Canvas" type="CanvasLayer" parent="."]
-
-[node name="UI" type="SplitContainer" parent="Canvas"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-split_offset = 460
-vertical = true
-
-[node name="Game" type="MarginContainer" parent="Canvas/UI"]
-layout_mode = 2
-
-[node name="Status" type="MarginContainer" parent="Canvas/UI"]
-layout_mode = 2
+[node name="Game" type="Node"]
+script = ExtResource("1_irurx")

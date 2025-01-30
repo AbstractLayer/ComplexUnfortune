@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvd46d2e5pyw4"]
+
+[ext_resource type="Script" uid="uid://i5weuurvmrbj" path="res://src/main/ui/ui.gd" id="1_lbqld"]
+
+[node name="UI" type="Node" node_paths=PackedStringArray("menus_node", "hud_node")]
+script = ExtResource("1_lbqld")
+menus_node = NodePath("UICanvas/Menus")
+hud_node = NodePath("UICanvas/HUD")
+
+[node name="UICanvas" type="CanvasLayer" parent="."]
+
+[node name="Menus" type="Node" parent="UICanvas"]
+
+[node name="HUD" type="Node" parent="UICanvas"]

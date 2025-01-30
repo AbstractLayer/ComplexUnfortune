@@ -1,0 +1,490 @@
+[gd_scene load_steps=16 format=3 uid="uid://bctfhgs8in7mw"]
+
+[ext_resource type="StyleBox" uid="uid://cb88j8ajnwxgd" path="res://assets/main/ui/style/misc/empty_panel.tres" id="1_4auc6"]
+[ext_resource type="Script" uid="uid://6q6yrytrnucp" path="res://src/main/ui/screens/mainmenu/main_menu.gd" id="1_t3vmj"]
+[ext_resource type="Script" uid="uid://c3uho61du1fel" path="res://src/main/ui/screens/mainmenu/main_menu_parallax.gd" id="2_2y3ef"]
+[ext_resource type="Texture2D" uid="uid://cm3vcvd73m76" path="res://assets/main/ui/screens/mainmenu/parallax_title.png" id="3_gknk2"]
+[ext_resource type="Texture2D" uid="uid://by5wn4xym7ace" path="res://assets/main/ui/screens/mainmenu/logo.png" id="4_4auc6"]
+[ext_resource type="Texture2D" uid="uid://c0o8lpyl4wp05" path="res://icon.svg" id="4_t3vmj"]
+[ext_resource type="FontFile" uid="uid://wcngav18iibr" path="res://assets/main/ui/style/fonts/Poker Nightmare.ttf" id="5_tluhi"]
+[ext_resource type="Texture2D" uid="uid://b5vhw5f8m7ypo" path="res://assets/main/ui/screens/mainmenu/parallax_menu.png" id="6_2y3ef"]
+[ext_resource type="StyleBox" uid="uid://dvlpjp37r5k6y" path="res://assets/main/ui/style/menu/menu_panel.tres" id="6_kbghk"]
+[ext_resource type="Script" uid="uid://carb5tuc58mui" path="res://src/main/ui/screens/mainmenu/multiplayer/multiplayer_panel.gd" id="9_t3vmj"]
+[ext_resource type="Script" uid="uid://chwsjl4058baq" path="res://src/main/ui/screens/mainmenu/lobby/lobby_panel.gd" id="10_tluhi"]
+
+[sub_resource type="Theme" id="Theme_2nd77"]
+default_font = ExtResource("5_tluhi")
+Label/colors/font_color = Color(0.65, 0.400833, 0, 1)
+Label/font_sizes/font_size = 72
+Label/fonts/font = ExtResource("5_tluhi")
+
+[sub_resource type="Gradient" id="Gradient_u4msj"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6t6gg"]
+gradient = SubResource("Gradient_u4msj")
+width = 128
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2y3ef"]
+bg_color = Color(0.2112, 0.2384, 0.32, 0.588235)
+border_width_left = 1
+border_width_top = 4
+border_width_right = 1
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 0.686275)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+anti_aliasing = false
+
+[node name="MainMenuScreen" type="Control" node_paths=PackedStringArray("multiplayer_panel", "lobby_panel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t3vmj")
+multiplayer_panel = NodePath("Menus/MarginMenu/Separator/MultiplayerPanel")
+lobby_panel = NodePath("Menus/MarginMenu/Separator/LobbyPanel")
+
+[node name="Title" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.289
+offset_bottom = -3.08
+theme_override_styles/panel = ExtResource("1_4auc6")
+
+[node name="MarginTitle" type="MarginContainer" parent="Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 40
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Title/MarginTitle"]
+
+[node name="TitleParallax" type="ParallaxLayer" parent="Title/MarginTitle/ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+script = ExtResource("2_2y3ef")
+
+[node name="Sprite2D" type="Sprite2D" parent="Title/MarginTitle/ParallaxBackground/TitleParallax"]
+modulate = Color(1, 0.25, 0.25, 1)
+texture = ExtResource("3_gknk2")
+centered = false
+
+[node name="Logo" type="TextureRect" parent="Title/MarginTitle"]
+texture_repeat = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("4_4auc6")
+
+[node name="GameName" type="Label" parent="Title/MarginTitle/Logo"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.125
+anchor_top = 0.199
+anchor_right = 2.125
+anchor_bottom = 0.801
+offset_left = 188.0
+offset_top = 27.028
+offset_right = -188.0
+offset_bottom = -27.028
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2nd77")
+text = "Complex Unfortune"
+
+[node name="Menus" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.285
+anchor_right = 1.0
+anchor_bottom = 0.999
+offset_top = -0.200012
+offset_bottom = 0.719971
+theme_override_styles/panel = ExtResource("1_4auc6")
+
+[node name="MarginMenu" type="MarginContainer" parent="Menus"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Menus/MarginMenu"]
+
+[node name="MenuParallax" type="ParallaxLayer" parent="Menus/MarginMenu/ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+script = ExtResource("2_2y3ef")
+
+[node name="Sprite2D" type="Sprite2D" parent="Menus/MarginMenu/ParallaxBackground/MenuParallax"]
+position = Vector2(0, 205)
+texture = ExtResource("6_2y3ef")
+centered = false
+
+[node name="Separator" type="HBoxContainer" parent="Menus/MarginMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Menus/MarginMenu/Separator"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="ContinuePanel" type="Panel" parent="Menus/MarginMenu/Separator/Buttons"]
+visible = false
+custom_minimum_size = Vector2(194.76, 75)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_4auc6")
+
+[node name="Continue" type="TextureButton" parent="Menus/MarginMenu/Separator/Buttons/ContinuePanel"]
+layout_mode = 2
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 72.0
+size_flags_horizontal = 4
+texture_normal = SubResource("GradientTexture2D_6t6gg")
+
+[node name="Label" type="Label" parent="Menus/MarginMenu/Separator/Buttons/ContinuePanel/Continue"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -11.5
+offset_right = 35.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+horizontal_alignment = 1
+
+[node name="MultiplayerPanel" type="Panel" parent="Menus/MarginMenu/Separator/Buttons"]
+custom_minimum_size = Vector2(194.76, 75)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_4auc6")
+
+[node name="Host" type="Button" parent="Menus/MarginMenu/Separator/Buttons/MultiplayerPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.226
+anchor_top = 0.073
+anchor_right = 0.883
+anchor_bottom = 0.5
+offset_left = -1.01576
+offset_top = 0.525
+offset_right = -0.473083
+offset_bottom = 32.5
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_2y3ef")
+
+[node name="Label" type="Label" parent="Menus/MarginMenu/Separator/Buttons/MultiplayerPanel/Host"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Multiplayer"
+
+[node name="Label" type="Label" parent="Menus/MarginMenu/Separator/Buttons/MultiplayerPanel"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = -13.0
+offset_right = 210.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 64
+text = "{"
+
+[node name="AcervoPanel" type="Panel" parent="Menus/MarginMenu/Separator/Buttons"]
+visible = false
+custom_minimum_size = Vector2(194.76, 75)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_4auc6")
+
+[node name="Exit" type="TextureButton" parent="Menus/MarginMenu/Separator/Buttons/AcervoPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_vertical = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("GradientTexture2D_6t6gg")
+
+[node name="Label" type="Label" parent="Menus/MarginMenu/Separator/Buttons/AcervoPanel/Exit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Acervo"
+
+[node name="OptionsPanel" type="Panel" parent="Menus/MarginMenu/Separator/Buttons"]
+visible = false
+custom_minimum_size = Vector2(194.76, 75)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_4auc6")
+
+[node name="Options" type="TextureButton" parent="Menus/MarginMenu/Separator/Buttons/OptionsPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_vertical = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("GradientTexture2D_6t6gg")
+
+[node name="Label" type="Label" parent="Menus/MarginMenu/Separator/Buttons/OptionsPanel/Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+
+[node name="ExitPanel" type="Panel" parent="Menus/MarginMenu/Separator/Buttons"]
+visible = false
+custom_minimum_size = Vector2(194.76, 75)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_4auc6")
+
+[node name="Exit" type="TextureButton" parent="Menus/MarginMenu/Separator/Buttons/ExitPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_vertical = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("GradientTexture2D_6t6gg")
+
+[node name="Label" type="Label" parent="Menus/MarginMenu/Separator/Buttons/ExitPanel/Exit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+
+[node name="MultiplayerPanel" type="Panel" parent="Menus/MarginMenu/Separator" node_paths=PackedStringArray("host_button", "join_button", "textedit_host_name", "textedit_join_name")]
+visible = false
+custom_minimum_size = Vector2(1050, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("6_kbghk")
+script = ExtResource("9_t3vmj")
+host_button = NodePath("Hbox/HostMargin/Container/VBoxContainer/HostButton")
+join_button = NodePath("Hbox/JoinMargin/Container/VBoxContainer/JoinButton")
+textedit_host_name = NodePath("Hbox/HostMargin/Container/VBoxContainer/NameTextEdit")
+textedit_join_name = NodePath("Hbox/JoinMargin/Container/VBoxContainer/NameTextEdit")
+
+[node name="Hbox" type="HBoxContainer" parent="Menus/MarginMenu/Separator/MultiplayerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HostMargin" type="MarginContainer" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Container" type="PanelContainer" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/HostMargin"]
+layout_mode = 2
+
+[node name="HostLabel" type="Label" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/HostMargin/Container"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "
+
+Host"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/HostMargin/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NameTextEdit" type="TextEdit" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/HostMargin/Container/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+placeholder_text = "Name"
+
+[node name="HostButton" type="Button" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/HostMargin/Container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Host"
+
+[node name="JoinMargin" type="MarginContainer" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Container" type="PanelContainer" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/JoinMargin"]
+layout_mode = 2
+
+[node name="JoinLabel" type="Label" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/JoinMargin/Container"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "
+
+Join"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/JoinMargin/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NameTextEdit" type="TextEdit" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/JoinMargin/Container/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+placeholder_text = "Name"
+
+[node name="JoinButton" type="Button" parent="Menus/MarginMenu/Separator/MultiplayerPanel/Hbox/JoinMargin/Container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Join"
+
+[node name="LobbyPanel" type="Panel" parent="Menus/MarginMenu/Separator" node_paths=PackedStringArray("players_container", "players_position_container", "start_button")]
+custom_minimum_size = Vector2(1050, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("6_kbghk")
+script = ExtResource("10_tluhi")
+players_container = NodePath("LobbyMargin/Panel/Players")
+players_position_container = NodePath("LobbyMargin/Panel/Position")
+start_button = NodePath("LobbyMargin/Panel/StartButton")
+
+[node name="LobbyMultiSpawner" type="MultiplayerSpawner" parent="Menus/MarginMenu/Separator/LobbyPanel"]
+_spawnable_scenes = PackedStringArray("uid://yb0u3rclvn4g")
+spawn_path = NodePath("../LobbyMargin/Panel/Players")
+spawn_limit = 4
+
+[node name="LobbyMargin" type="MarginContainer" parent="Menus/MarginMenu/Separator/LobbyPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="Menus/MarginMenu/Separator/LobbyPanel/LobbyMargin"]
+layout_mode = 2
+
+[node name="Players" type="HBoxContainer" parent="Menus/MarginMenu/Separator/LobbyPanel/LobbyMargin/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_right = -54.0
+offset_bottom = -154.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Position" type="HBoxContainer" parent="Menus/MarginMenu/Separator/LobbyPanel/LobbyMargin/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+offset_right = 524.0
+grow_vertical = 0
+
+[node name="Player4" type="TextureRect" parent="Menus/MarginMenu/Separator/LobbyPanel/LobbyMargin/Panel/Position"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_t3vmj")
+
+[node name="Player3" type="TextureRect" parent="Menus/MarginMenu/Separator/LobbyPanel/LobbyMargin/Panel/Position"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_t3vmj")
+
+[node name="Player2" type="TextureRect" parent="Menus/MarginMenu/Separator/LobbyPanel/LobbyMargin/Panel/Position"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_t3vmj")
+
+[node name="Player1" type="TextureRect" parent="Menus/MarginMenu/Separator/LobbyPanel/LobbyMargin/Panel/Position"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_t3vmj")
+
+[node name="StartButton" type="Button" parent="Menus/MarginMenu/Separator/LobbyPanel/LobbyMargin/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Start"

@@ -12,6 +12,7 @@ config_version=5
 
 config/name="ComplexUnfortune"
 config/version="0.0001"
+run/main_scene="uid://drgan1mk6y2wo"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 0)
 boot_splash/show_image=false
@@ -19,16 +20,27 @@ boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneManager="*res://src/globals/scene_manager.gd"
+MultiplayerManager="*res://src/globals/multiplayer_manager.gd"
+SignalBus="*res://src/globals/signal_bus.gd"
+
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/sharp_corners=true
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/project-time-tracker/plugin.cfg")
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [physics]
 
