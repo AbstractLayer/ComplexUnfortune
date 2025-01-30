@@ -3,7 +3,7 @@ extends Node
 const SERVER_IP = "127.0.0.1"
 const PORT = 25565
 
-var player_scene = preload("res://assets/main/ui/screens/mainmenu/lobby/player_lobby.tscn")
+var player_scene = preload("res://assets/main/ui/menus/mainmenu/lobby/player_lobby.tscn")
 
 var _players_lobby_node
 

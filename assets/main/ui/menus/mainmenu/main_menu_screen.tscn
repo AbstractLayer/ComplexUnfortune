@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=3 uid="uid://bctfhgs8in7mw"]
 
 [ext_resource type="StyleBox" uid="uid://cb88j8ajnwxgd" path="res://assets/main/ui/style/misc/empty_panel.tres" id="1_4auc6"]
-[ext_resource type="Script" uid="uid://6q6yrytrnucp" path="res://src/main/ui/screens/mainmenu/main_menu.gd" id="1_t3vmj"]
-[ext_resource type="Script" uid="uid://c3uho61du1fel" path="res://src/main/ui/screens/mainmenu/main_menu_parallax.gd" id="2_2y3ef"]
-[ext_resource type="Texture2D" uid="uid://cm3vcvd73m76" path="res://assets/main/ui/screens/mainmenu/parallax_title.png" id="3_gknk2"]
-[ext_resource type="Texture2D" uid="uid://by5wn4xym7ace" path="res://assets/main/ui/screens/mainmenu/logo.png" id="4_4auc6"]
+[ext_resource type="Script" uid="uid://6q6yrytrnucp" path="res://src/main/ui/menus/mainmenu/main_menu.gd" id="1_t3vmj"]
+[ext_resource type="Script" uid="uid://c3uho61du1fel" path="res://src/main/ui/menus/mainmenu/main_menu_parallax.gd" id="2_2y3ef"]
+[ext_resource type="Texture2D" uid="uid://cm3vcvd73m76" path="res://assets/main/ui/menus/mainmenu/parallax_title.png" id="3_gknk2"]
+[ext_resource type="Texture2D" uid="uid://by5wn4xym7ace" path="res://assets/main/ui/menus/mainmenu/logo.png" id="4_4auc6"]
 [ext_resource type="Texture2D" uid="uid://c0o8lpyl4wp05" path="res://icon.svg" id="4_t3vmj"]
 [ext_resource type="FontFile" uid="uid://wcngav18iibr" path="res://assets/main/ui/style/fonts/Poker Nightmare.ttf" id="5_tluhi"]
-[ext_resource type="Texture2D" uid="uid://b5vhw5f8m7ypo" path="res://assets/main/ui/screens/mainmenu/parallax_menu.png" id="6_2y3ef"]
+[ext_resource type="Texture2D" uid="uid://b5vhw5f8m7ypo" path="res://assets/main/ui/menus/mainmenu/parallax_menu.png" id="6_2y3ef"]
 [ext_resource type="StyleBox" uid="uid://dvlpjp37r5k6y" path="res://assets/main/ui/style/menu/menu_panel.tres" id="6_kbghk"]
-[ext_resource type="Script" uid="uid://carb5tuc58mui" path="res://src/main/ui/screens/mainmenu/multiplayer/multiplayer_panel.gd" id="9_t3vmj"]
-[ext_resource type="Script" uid="uid://chwsjl4058baq" path="res://src/main/ui/screens/mainmenu/lobby/lobby_panel.gd" id="10_tluhi"]
+[ext_resource type="Script" uid="uid://carb5tuc58mui" path="res://src/main/ui/menus/mainmenu/multiplayer/multiplayer_panel.gd" id="9_t3vmj"]
+[ext_resource type="Script" uid="uid://chwsjl4058baq" path="res://src/main/ui/menus/mainmenu/lobby/lobby_panel.gd" id="10_tluhi"]
 
 [sub_resource type="Theme" id="Theme_2nd77"]
 default_font = ExtResource("5_tluhi")

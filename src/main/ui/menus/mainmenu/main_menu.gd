@@ -9,6 +9,8 @@ func _ready() -> void:
 	multiplayer_panel.host_button.connect("pressed", _on_host_button_pressed)
 	multiplayer_panel.join_button.connect("pressed", _on_join_button_pressed)
 	lobby_panel.start_button.connect("pressed", _on_start_button_pressed)
+	multiplayer_panel.show()
+	lobby_panel.hide()
 	
 func _on_host_button_pressed() -> void:
 	MultiplayerManager.host_game()
