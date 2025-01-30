@@ -7,4 +7,4 @@ func _ready() -> void:
 	_init_main_game()
 
 func _init_main_game() -> void:
-	SceneManager.load_new_scene()
+	SceneManager.load_new_scene(SceneManager.scenes_gallery.scenes["MainMenuScreen"].get_path(), ui_node.menus_node)

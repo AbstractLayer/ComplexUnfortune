@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://wcngav18iibr"
-path="res://.godot/imported/Poker Nightmare.ttf-ac89690d1cf37ca3aa5202329da3fc93.fontdata"
+path="res://.godot/imported/Poker Nightmare.ttf-103b54ba20189d22640df83e7da2d674.fontdata"
 
 [deps]
 
-source_file="res://assets/main/ui/style/fonts/Poker Nightmare.ttf"
-dest_files=["res://.godot/imported/Poker Nightmare.ttf-ac89690d1cf37ca3aa5202329da3fc93.fontdata"]
+source_file="res://assets/main/ui/resources/style/fonts/Poker Nightmare.ttf"
+dest_files=["res://.godot/imported/Poker Nightmare.ttf-103b54ba20189d22640df83e7da2d674.fontdata"]
 
 [params]
 
