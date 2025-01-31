@@ -1,3 +1,3 @@
 class_name ScenesGallery extends Resource
 
-@export var scenes: Dictionary[String, PackedScene]
+@export var scenes: Dictionary[String, String]

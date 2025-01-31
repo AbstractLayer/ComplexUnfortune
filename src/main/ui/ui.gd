@@ -1,4 +1,4 @@
-class_name UI extends Node
+class_name UINode extends Node
 
 @export var canvas: CanvasLayer
 
