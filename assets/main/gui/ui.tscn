@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvd46d2e5pyw4"]
+
+[ext_resource type="Script" uid="uid://i5weuurvmrbj" path="res://src/main/gui/gui.gd" id="1_lbqld"]
+[ext_resource type="PackedScene" uid="uid://bdddjbx0ct37n" path="res://assets/main/gui/loading/loading_screen.tscn" id="2_hgtlj"]
+
+[node name="GUI" type="Node" node_paths=PackedStringArray("gui_canvas", "init_node", "ui_node", "hud_node")]
+script = ExtResource("1_lbqld")
+gui_canvas = NodePath("GUICanvas")
+init_node = NodePath("GUICanvas/Init")
+ui_node = NodePath("GUICanvas/UI")
+hud_node = NodePath("GUICanvas/HUD")
+
+[node name="GUICanvas" type="CanvasLayer" parent="."]
+
+[node name="Init" type="Node" parent="GUICanvas"]
+
+[node name="UI" type="Node" parent="GUICanvas"]
+
+[node name="HUD" type="Node" parent="GUICanvas"]
+
+[node name="LoadingScreen" parent="GUICanvas" instance=ExtResource("2_hgtlj")]
+visible = false

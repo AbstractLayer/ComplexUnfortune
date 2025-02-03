@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ScenesGallery" load_steps=2 format=3 uid="uid://dhu0jg72sigew"]
+
+[ext_resource type="Script" uid="uid://bywhkps500vh0" path="res://src/main/resources/scenes_gallery.gd" id="1_wa5vu"]
+
+[resource]
+script = ExtResource("1_wa5vu")
+scenes = Dictionary[String, String]({
+"BattleScreen": "uid://02kxwwcb0wsc",
+"DungeonCrawler": "uid://dm1xc6eilg6yf",
+"MainMenu": "uid://bctfhgs8in7mw"
+})

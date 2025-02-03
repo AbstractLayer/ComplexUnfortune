@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://duvx81lpqwx6g"]
+
+[ext_resource type="StyleBox" uid="uid://cb88j8ajnwxgd" path="res://assets/main/gui/resources/style/misc/empty_panel.tres" id="1_unjbk"]
+[ext_resource type="Script" uid="uid://l2hqpxtggcdj" path="res://src/main/gui/ui/main_menu/ui/ui.gd" id="2_10q8v"]
+[ext_resource type="Script" uid="uid://c3uho61du1fel" path="res://src/main/gui/ui/main_menu/shared/main_menu_parallax.gd" id="3_05tad"]
+[ext_resource type="Texture2D" uid="uid://b5vhw5f8m7ypo" path="res://assets/main/gui/main_menu/ui/parallax_menus.png" id="4_r5pq3"]
+[ext_resource type="PackedScene" uid="uid://cg06mdjim2gnx" path="res://assets/main/gui/main_menu/ui/buttons/buttons.tscn" id="5_swhb5"]
+[ext_resource type="PackedScene" uid="uid://dwcoflw4cny7u" path="res://assets/main/gui/main_menu/ui/panels/panels.tscn" id="6_3jn2x"]
+
+[node name="UI" type="Panel" node_paths=PackedStringArray("ui_parallax", "ui_parallax_sprite", "ui_buttons", "ui_panels")]
+anchors_preset = -1
+anchor_top = 0.285
+anchor_right = 1.0
+anchor_bottom = 0.999
+offset_top = -0.200012
+offset_bottom = 0.719971
+theme_override_styles/panel = ExtResource("1_unjbk")
+script = ExtResource("2_10q8v")
+ui_parallax = NodePath("UIMargin/ParallaxBackground/UIParallax")
+ui_parallax_sprite = NodePath("UIMargin/ParallaxBackground/UIParallax/UIParallaxSprite")
+ui_buttons = NodePath("UIMargin/HBox/Buttons")
+ui_panels = NodePath("UIMargin/HBox/Panels")
+
+[node name="UIMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="UIMargin"]
+
+[node name="UIParallax" type="ParallaxLayer" parent="UIMargin/ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+script = ExtResource("3_05tad")
+
+[node name="UIParallaxSprite" type="Sprite2D" parent="UIMargin/ParallaxBackground/UIParallax"]
+position = Vector2(0, 205)
+texture = ExtResource("4_r5pq3")
+centered = false
+
+[node name="HBox" type="HBoxContainer" parent="UIMargin"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 1
+
+[node name="Buttons" parent="UIMargin/HBox" instance=ExtResource("5_swhb5")]
+layout_mode = 2
+
+[node name="Panels" parent="UIMargin/HBox" instance=ExtResource("6_3jn2x")]
+layout_mode = 2

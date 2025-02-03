@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsjtyai2e4ftr"]
+
+[ext_resource type="Script" uid="uid://cf2m243av10qf" path="res://src/main/world/world.gd" id="1_irurx"]
+
+[node name="World" type="Node" node_paths=PackedStringArray("dungeon_crawler", "fight_scene")]
+script = ExtResource("1_irurx")
+dungeon_crawler = NodePath("DungeonCrawler")
+fight_scene = NodePath("FightScene")
+
+[node name="DungeonCrawler" type="Node" parent="."]
+
+[node name="FightScene" type="Node" parent="."]

@@ -1,0 +1,239 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg06mdjim2gnx"]
+
+[ext_resource type="StyleBox" uid="uid://cb88j8ajnwxgd" path="res://assets/main/gui/resources/style/misc/empty_panel.tres" id="1_bvr1s"]
+[ext_resource type="Script" uid="uid://bcas4qx1toucr" path="res://src/main/gui/ui/main_menu/ui/buttons/buttons.gd" id="1_mj2lh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2k3wf"]
+bg_color = Color(0.2112, 0.2384, 0.32, 0.588235)
+border_width_left = 1
+border_width_top = 4
+border_width_right = 1
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 0.686275)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+anti_aliasing = false
+
+[node name="Buttons" type="VBoxContainer" node_paths=PackedStringArray("continue_button", "multiplayer_button", "acervo_button", "options_button", "exit_button")]
+anchors_preset = -1
+anchor_right = 0.152
+anchor_bottom = 0.578
+offset_right = -194.56
+offset_bottom = -416.16
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("1_mj2lh")
+continue_button = NodePath("ContinuePanel/SubPanel/ContinueButton")
+multiplayer_button = NodePath("MultiplayerPanel/SubPanel/MultiplayerButton")
+acervo_button = NodePath("AcervoPanel/SubPanel/AcervoButton")
+options_button = NodePath("OptionsPanel/SubPanel/OptionsButton")
+exit_button = NodePath("ExitPanel/SubPanel/ExitButton")
+
+[node name="ContinuePanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(194.76, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_bvr1s")
+
+[node name="SubPanel" type="Panel" parent="ContinuePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.075
+anchor_right = 0.657219
+anchor_bottom = 0.928312
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_bvr1s")
+metadata/_edit_use_anchors_ = true
+
+[node name="ContinueButton" type="Button" parent="ContinuePanel/SubPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_2k3wf")
+text = "Continue"
+metadata/_edit_use_anchors_ = true
+
+[node name="DEBUG" type="Label" parent="ContinuePanel/SubPanel"]
+visible = false
+layout_mode = 0
+anchor_left = 0.992188
+anchor_top = -0.234381
+anchor_right = 1.30469
+anchor_bottom = 1.08401
+theme_override_font_sizes/font_size = 64
+text = "{"
+metadata/_edit_use_anchors_ = true
+
+[node name="MultiplayerPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(194.76, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_bvr1s")
+
+[node name="SubPanel" type="Panel" parent="MultiplayerPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.220785
+anchor_top = 0.075
+anchor_right = 0.878004
+anchor_bottom = 0.928312
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_bvr1s")
+metadata/_edit_use_anchors_ = true
+
+[node name="MultiplayerButton" type="Button" parent="MultiplayerPanel/SubPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_2k3wf")
+text = "Multiplayer"
+metadata/_edit_use_anchors_ = true
+
+[node name="DEBUG" type="Label" parent="MultiplayerPanel/SubPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.992188
+anchor_top = -0.234381
+anchor_right = 1.30469
+anchor_bottom = 1.08401
+offset_bottom = 9.15527e-05
+theme_override_font_sizes/font_size = 64
+text = "{"
+metadata/_edit_use_anchors_ = true
+
+[node name="AcervoPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(194.76, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_bvr1s")
+
+[node name="SubPanel" type="Panel" parent="AcervoPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.075
+anchor_right = 0.657219
+anchor_bottom = 0.928312
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_bvr1s")
+metadata/_edit_use_anchors_ = true
+
+[node name="AcervoButton" type="Button" parent="AcervoPanel/SubPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_2k3wf")
+text = "Acervo"
+metadata/_edit_use_anchors_ = true
+
+[node name="DEBUG" type="Label" parent="AcervoPanel/SubPanel"]
+visible = false
+layout_mode = 0
+anchor_left = 0.992188
+anchor_top = -0.234381
+anchor_right = 1.30469
+anchor_bottom = 1.08401
+theme_override_font_sizes/font_size = 64
+text = "{"
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionsPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(194.76, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_bvr1s")
+
+[node name="SubPanel" type="Panel" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.075
+anchor_right = 0.657219
+anchor_bottom = 0.928312
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_bvr1s")
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionsButton" type="Button" parent="OptionsPanel/SubPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_2k3wf")
+text = "Options"
+metadata/_edit_use_anchors_ = true
+
+[node name="DEBUG" type="Label" parent="OptionsPanel/SubPanel"]
+visible = false
+layout_mode = 0
+anchor_left = 0.992188
+anchor_top = -0.234381
+anchor_right = 1.30469
+anchor_bottom = 1.08401
+theme_override_font_sizes/font_size = 64
+text = "{"
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(194.76, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_bvr1s")
+
+[node name="SubPanel" type="Panel" parent="ExitPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.075
+anchor_right = 0.657219
+anchor_bottom = 0.928312
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_bvr1s")
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="Button" parent="ExitPanel/SubPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_2k3wf")
+text = "Exit"
+metadata/_edit_use_anchors_ = true
+
+[node name="DEBUG" type="Label" parent="ExitPanel/SubPanel"]
+visible = false
+layout_mode = 0
+anchor_left = 0.992188
+anchor_top = -0.234381
+anchor_right = 1.30469
+anchor_bottom = 1.08401
+theme_override_font_sizes/font_size = 64
+text = "{"
+metadata/_edit_use_anchors_ = true
