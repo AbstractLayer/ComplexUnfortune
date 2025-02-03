@@ -1,9 +1,9 @@
 extends Node
 
-signal player_peer_connect(player_lobby: UIPlayerLobby)
+signal player_peer_connect(id: int)
 signal player_peer_disconnect(player_id: int)
 
-@onready var player_lobby_scene: PackedScene = preload("uid://yb0u3rclvn4g")
+var registered_players: Dictionary = {}
 
 func create_game(host_port: int) -> void:
 	var server_peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
@@ -25,10 +25,7 @@ func join_game(join_ip: String, join_port: int) -> void:
 	print("joined")
 
 func _add_player_in_game(id: int) -> void:
-	print("Player %d connected" % id)
-	var player_lobby: UIPlayerLobby = player_lobby_scene.instantiate()
-	player_lobby.player_id = id
-	player_peer_connect.emit(player_lobby)
+	player_peer_connect.emit(id)
 	
 func _remove_player_in_game(id: int) -> void:
 	print("Player %s has disconnected" % [id])
