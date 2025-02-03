@@ -1,46 +1,35 @@
 extends Node
 
-const SERVER_IP = "127.0.0.1"
-const PORT = 25565
+signal player_peer_connect(player_lobby: UIPlayerLobby)
+signal player_peer_disconnect(player_id: int)
 
-var player_scene = preload("res://assets/main/ui/menus/mainmenu/lobby/player_lobby.tscn")
+@onready var player_lobby_scene: PackedScene = preload("uid://yb0u3rclvn4g")
 
-var _players_lobby_node
-
-func host_game():
-	print("hosted")
-	var server_peer = ENetMultiplayerPeer.new()
-	server_peer.create_server(PORT)
+func create_game(host_port: int) -> void:
+	var server_peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
+	server_peer.create_server(host_port, 5)
 	
-	_players_lobby_node = get_tree().get_current_scene().get_node(
-		"UI/UICanvas/Menus/MainMenuScreen/Menus/MarginMenu/Separator/LobbyPanel/LobbyMargin/Panel/Players"
-	)
 	multiplayer.multiplayer_peer = server_peer
 	
 	multiplayer.peer_connected.connect(_add_player_in_game)
 	multiplayer.peer_disconnected.connect(_remove_player_in_game)
 	
+	print("hosted")
 	_add_player_in_game(1)
 	
-func join_game():
-	print("joined")
-	
-	var client_peer = ENetMultiplayerPeer.new()
-	client_peer.create_client(SERVER_IP,PORT)
+func join_game(join_ip: String, join_port: int) -> void:
+	var client_peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
+	client_peer.create_client(join_ip,join_port)
 	
 	multiplayer.multiplayer_peer = client_peer
+	print("joined")
+
+func _add_player_in_game(id: int) -> void:
+	print("Player %d connected" % id)
+	var player_lobby: UIPlayerLobby = player_lobby_scene.instantiate()
+	player_lobby.player_id = id
+	player_peer_connect.emit(player_lobby)
 	
-func _add_player_in_game(id: int):
-	print("Player with id %s has joined" % [id])
-	
-	var player = player_scene.instantiate()
-	player.player_id = id
-	player.player_name = str(id)
-	
-	_players_lobby_node.add_child(player, true)
-	
-func _remove_player_in_game(id: int):
-	print("Player %s has disconnected" % id)
-	#if not _players_spawn_node.has_node(str(id)):
-		#return
-	#_players_spawn_node.get_node(str(id)).queue_free()
+func _remove_player_in_game(id: int) -> void:
+	print("Player %s has disconnected" % [id])
+	player_peer_disconnect.emit(id)

@@ -5,7 +5,7 @@ extends Node
 var loading_screen: Control
 
 func _ready() -> void:
-	loading_screen = get_tree().get_current_scene().get_node("UI/UICanvas/LoadingScreen")
+	loading_screen = get_tree().get_current_scene().get_node("GUI/GUICanvas/LoadingScreen")
 	loading_screen.hide()
 	
 func load_new_scene(scene_path: String, owner_node : Node) -> void:

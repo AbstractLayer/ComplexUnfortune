@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_wa5vu")
 scenes = Dictionary[String, String]({
+"BattleScreen": "uid://02kxwwcb0wsc",
 "DungeonCrawler": "uid://dm1xc6eilg6yf",
 "MainMenu": "uid://bctfhgs8in7mw"
 })

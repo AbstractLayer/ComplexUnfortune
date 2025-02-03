@@ -1,0 +1,145 @@
+[gd_scene load_steps=4 format=3 uid="uid://euwowl1fr7pr"]
+
+[ext_resource type="StyleBox" uid="uid://dvlpjp37r5k6y" path="res://assets/main/gui/resources/style/menu/menu_panel.tres" id="1_m4m2s"]
+[ext_resource type="Script" uid="uid://chwsjl4058baq" path="res://src/main/gui/ui/main_menu/ui/panels/lobby/lobby_panel.gd" id="2_g3r5o"]
+[ext_resource type="Texture2D" uid="uid://c0o8lpyl4wp05" path="res://icon.svg" id="3_icoxp"]
+
+[node name="LobbyPanel" type="Panel" node_paths=PackedStringArray("lobby_multiplayer_spawner", "players_connect_container", "players_position_container", "players_count_label", "lobby_options_button", "start_game_button")]
+custom_minimum_size = Vector2(1050, 473)
+anchors_preset = -1
+anchor_right = 0.820313
+anchor_bottom = 0.656944
+offset_right = -0.000610352
+offset_bottom = 0.000335693
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_m4m2s")
+script = ExtResource("2_g3r5o")
+lobby_multiplayer_spawner = NodePath("LobbyMultiSpawner")
+players_connect_container = NodePath("LobbyMargin/Lobby/PlayersLobby")
+players_position_container = NodePath("LobbyMargin/Lobby/PlayersPosition")
+players_count_label = NodePath("LobbyMargin/Lobby/PlayersCount")
+lobby_options_button = NodePath("LobbyMargin/Lobby/LobbyOptionsButton")
+start_game_button = NodePath("LobbyMargin/Lobby/StartGameButton")
+metadata/_edit_use_anchors_ = true
+
+[node name="LobbyMultiSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://yb0u3rclvn4g")
+spawn_path = NodePath("../LobbyMargin/Lobby/PlayersLobby")
+spawn_limit = 5
+
+[node name="LobbyMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Lobby" type="Panel" parent="LobbyMargin"]
+layout_mode = 2
+
+[node name="PlayersLobby" type="HBoxContainer" parent="LobbyMargin/Lobby"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0431373
+anchor_top = 0.03386
+anchor_right = 0.947059
+anchor_bottom = 0.68623
+offset_right = -0.00012207
+offset_bottom = -38.9999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayersPosition" type="HBoxContainer" parent="LobbyMargin/Lobby"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0137255
+anchor_top = 0.67714
+anchor_right = 0.656725
+anchor_bottom = 0.96614
+offset_left = 1.0
+offset_top = 0.0269775
+offset_right = 1.14001
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Player5" type="TextureRect" parent="LobbyMargin/Lobby/PlayersPosition"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_icoxp")
+expand_mode = 1
+
+[node name="Player4" type="TextureRect" parent="LobbyMargin/Lobby/PlayersPosition"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_icoxp")
+expand_mode = 1
+
+[node name="Player3" type="TextureRect" parent="LobbyMargin/Lobby/PlayersPosition"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_icoxp")
+expand_mode = 1
+
+[node name="Player2" type="TextureRect" parent="LobbyMargin/Lobby/PlayersPosition"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_icoxp")
+expand_mode = 1
+
+[node name="Player1" type="TextureRect" parent="LobbyMargin/Lobby/PlayersPosition"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_icoxp")
+expand_mode = 1
+
+[node name="PlayersCount" type="Label" parent="LobbyMargin/Lobby"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.860784
+anchor_top = 0.797592
+anchor_right = 0.977451
+anchor_bottom = 0.849511
+grow_horizontal = 0
+grow_vertical = 0
+text = "Players: %d/%d"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StartGameButton" type="Button" parent="LobbyMargin/Lobby"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.853922
+anchor_top = 0.853273
+anchor_right = 0.981373
+anchor_bottom = 0.96614
+grow_horizontal = 0
+grow_vertical = 0
+text = "Start"
+
+[node name="LobbyOptionsButton" type="Button" parent="LobbyMargin/Lobby"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.707843
+anchor_top = 0.853273
+anchor_right = 0.839216
+anchor_bottom = 0.96614
+grow_horizontal = 0
+grow_vertical = 0
+text = "Options"
+metadata/_edit_use_anchors_ = true

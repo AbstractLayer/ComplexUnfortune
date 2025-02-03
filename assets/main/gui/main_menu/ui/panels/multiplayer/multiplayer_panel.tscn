@@ -1,0 +1,124 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkltkld2jcr8d"]
+
+[ext_resource type="StyleBox" uid="uid://dvlpjp37r5k6y" path="res://assets/main/gui/resources/style/menu/menu_panel.tres" id="1_omw64"]
+[ext_resource type="Script" uid="uid://carb5tuc58mui" path="res://src/main/gui/ui/main_menu/ui/panels/multiplayer/multiplayer_panel.gd" id="2_v5hyy"]
+
+[node name="MultiplayerPanel" type="Panel" node_paths=PackedStringArray("host_button", "host_name_textedit", "host_port_textedit", "join_button", "join_name_textedit", "join_ip_textedit", "join_port_textedit")]
+custom_minimum_size = Vector2(1050, 473)
+anchors_preset = -1
+anchor_right = 0.820313
+anchor_bottom = 0.656944
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_omw64")
+script = ExtResource("2_v5hyy")
+host_button = NodePath("Hbox/HostMargin/Container/VBox/HostButton")
+host_name_textedit = NodePath("Hbox/HostMargin/Container/VBox/HostNameEdit")
+host_port_textedit = NodePath("Hbox/HostMargin/Container/VBox/HostPortEdit")
+join_button = NodePath("Hbox/JoinMargin/Container/VBox/JoinButton")
+join_name_textedit = NodePath("Hbox/JoinMargin/Container/VBox/JoinNameEdit")
+join_ip_textedit = NodePath("Hbox/JoinMargin/Container/VBox/JoinIPEdit")
+join_port_textedit = NodePath("Hbox/JoinMargin/Container/VBox/JoinPortEdit")
+metadata/_edit_use_anchors_ = true
+
+[node name="Hbox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HostMargin" type="MarginContainer" parent="Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Container" type="PanelContainer" parent="Hbox/HostMargin"]
+layout_mode = 2
+
+[node name="HostLabel" type="Label" parent="Hbox/HostMargin/Container"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "
+
+Host"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Hbox/HostMargin/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="HostNameEdit" type="TextEdit" parent="Hbox/HostMargin/Container/VBox"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+text = "Lostopkk"
+placeholder_text = "Name"
+
+[node name="HostPortEdit" type="TextEdit" parent="Hbox/HostMargin/Container/VBox"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+text = "25565"
+placeholder_text = "Port"
+
+[node name="HostButton" type="Button" parent="Hbox/HostMargin/Container/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Host"
+
+[node name="JoinMargin" type="MarginContainer" parent="Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Container" type="PanelContainer" parent="Hbox/JoinMargin"]
+layout_mode = 2
+
+[node name="JoinLabel" type="Label" parent="Hbox/JoinMargin/Container"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "
+
+Join"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Hbox/JoinMargin/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="JoinNameEdit" type="TextEdit" parent="Hbox/JoinMargin/Container/VBox"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+text = "Doidao"
+placeholder_text = "Name"
+
+[node name="JoinIPEdit" type="TextEdit" parent="Hbox/JoinMargin/Container/VBox"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+text = "127.0.0.1"
+placeholder_text = "IP"
+
+[node name="JoinPortEdit" type="TextEdit" parent="Hbox/JoinMargin/Container/VBox"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+text = "25565"
+placeholder_text = "Port"
+
+[node name="JoinButton" type="Button" parent="Hbox/JoinMargin/Container/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Join"

@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxj13xao55ror"]
+
+[ext_resource type="StyleBox" uid="uid://cb88j8ajnwxgd" path="res://assets/main/gui/resources/style/misc/empty_panel.tres" id="1_jnb0i"]
+[ext_resource type="Script" uid="uid://c3uho61du1fel" path="res://src/main/gui/ui/main_menu/shared/main_menu_parallax.gd" id="2_pqro2"]
+[ext_resource type="Script" uid="uid://8a5y3sqlil6h" path="res://src/main/gui/ui/main_menu/title/title.gd" id="2_vb0xv"]
+[ext_resource type="Texture2D" uid="uid://cm3vcvd73m76" path="res://assets/main/gui/main_menu/title/parallax_title.png" id="3_vb0xv"]
+[ext_resource type="Texture2D" uid="uid://by5wn4xym7ace" path="res://assets/main/gui/main_menu/title/logo.png" id="4_761kw"]
+[ext_resource type="FontFile" uid="uid://wcngav18iibr" path="res://assets/main/gui/resources/style/fonts/Poker Nightmare.ttf" id="5_7rm06"]
+
+[sub_resource type="Theme" id="Theme_2nd77"]
+default_font = ExtResource("5_7rm06")
+Label/colors/font_color = Color(0.65, 0.400833, 0, 1)
+Label/font_sizes/font_size = 72
+Label/fonts/font = ExtResource("5_7rm06")
+
+[node name="Title" type="Panel" node_paths=PackedStringArray("title_parallax", "title_parallax_sprite", "logo_textrect", "gamename_label")]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.289
+offset_bottom = -3.08
+theme_override_styles/panel = ExtResource("1_jnb0i")
+script = ExtResource("2_vb0xv")
+title_parallax = NodePath("MarginTitle/ParallaxBackground/TitleParallax")
+title_parallax_sprite = NodePath("MarginTitle/ParallaxBackground/TitleParallax/TitleParallaxSprite")
+logo_textrect = NodePath("MarginTitle/LogoTextRect")
+gamename_label = NodePath("MarginTitle/LogoTextRect/GameNameLabel")
+
+[node name="MarginTitle" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 40
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="MarginTitle"]
+
+[node name="TitleParallax" type="ParallaxLayer" parent="MarginTitle/ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+script = ExtResource("2_pqro2")
+
+[node name="TitleParallaxSprite" type="Sprite2D" parent="MarginTitle/ParallaxBackground/TitleParallax"]
+modulate = Color(1, 0.25, 0.25, 1)
+texture = ExtResource("3_vb0xv")
+centered = false
+
+[node name="LogoTextRect" type="TextureRect" parent="MarginTitle"]
+texture_repeat = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("4_761kw")
+
+[node name="GameNameLabel" type="Label" parent="MarginTitle/LogoTextRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.125
+anchor_top = 0.199
+anchor_right = 2.125
+anchor_bottom = 0.801
+offset_left = 188.0
+offset_top = 27.028
+offset_right = -188.0
+offset_bottom = -27.028
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2nd77")
+text = "Complex Unfortune"
