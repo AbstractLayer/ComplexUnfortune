@@ -7,11 +7,11 @@ func _ready() -> void:
 		set_process(false)
 		set_physics_process(false)
 	
-@rpc("call_local")
-func hello_function() -> void:
-	hello = true
+#@rpc("call_local")
+#func hello_function() -> void:
+	#hello = true
 	
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		print("hello")
-		hello_function.rpc()
+#func _process(_delta: float) -> void:
+	#if Input.is_action_just_pressed("ui_accept"):
+		#print("hello")
+		#hello_function.rpc()

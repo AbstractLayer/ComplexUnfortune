@@ -15,18 +15,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("1_m4m2s")
 script = ExtResource("2_g3r5o")
-lobby_multiplayer_spawner = NodePath("LobbyMultiSpawner")
+lobby_multiplayer_spawner = NodePath("LobbyMargin/Lobby/PlayersLobby/LobbyMultiSpawner")
 players_connect_container = NodePath("LobbyMargin/Lobby/PlayersLobby")
 players_position_container = NodePath("LobbyMargin/Lobby/PlayersPosition")
 players_count_label = NodePath("LobbyMargin/Lobby/PlayersCount")
 lobby_options_button = NodePath("LobbyMargin/Lobby/LobbyOptionsButton")
 start_game_button = NodePath("LobbyMargin/Lobby/StartGameButton")
 metadata/_edit_use_anchors_ = true
-
-[node name="LobbyMultiSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://yb0u3rclvn4g")
-spawn_path = NodePath("../LobbyMargin/Lobby/PlayersLobby")
-spawn_limit = 5
 
 [node name="LobbyMargin" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -58,6 +53,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 70
 metadata/_edit_use_anchors_ = true
+
+[node name="LobbyMultiSpawner" type="MultiplayerSpawner" parent="LobbyMargin/Lobby/PlayersLobby"]
+spawn_path = NodePath("..")
+spawn_limit = 5
 
 [node name="PlayersPosition" type="HBoxContainer" parent="LobbyMargin/Lobby"]
 layout_mode = 1
