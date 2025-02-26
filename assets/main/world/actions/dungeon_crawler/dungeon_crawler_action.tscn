@@ -1,3 +1,46 @@
-[gd_scene format=3 uid="uid://dm1xc6eilg6yf"]
+[gd_scene load_steps=3 format=3 uid="uid://dm1xc6eilg6yf"]
 
-[node name="DungeonCrawlerAction" type="Node"]
+[ext_resource type="Script" uid="uid://d2c40k81okrci" path="res://src/main/world/actions/dungeon_crawler/dungeon_crawler.gd" id="1_oxc13"]
+[ext_resource type="Texture2D" uid="uid://c0o8lpyl4wp05" path="res://icon.svg" id="2_2c1dg"]
+
+[node name="DungeonCrawlerAction" type="Node" node_paths=PackedStringArray("spawn_points_node", "background_node", "players_node")]
+script = ExtResource("1_oxc13")
+spawn_points_node = [NodePath("SpawnPoints/4"), NodePath("SpawnPoints/3"), NodePath("SpawnPoints/2"), NodePath("SpawnPoints/1"), NodePath("SpawnPoints/0")]
+background_node = NodePath("Background")
+players_node = NodePath("Players")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://b5avsotejgg6b")
+spawn_path = NodePath("../Players")
+spawn_limit = 5
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="4" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(400, 250)
+
+[node name="3" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(307, 250)
+
+[node name="2" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(202, 250)
+
+[node name="1" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(100, 250)
+
+[node name="0" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(22, 250)
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
+position = Vector2(639.5, 416)
+scale = Vector2(9.99219, 1)
+texture = ExtResource("2_2c1dg")
+
+[node name="Players" type="Node2D" parent="."]
